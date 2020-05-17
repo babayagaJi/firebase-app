@@ -1,0 +1,40 @@
+.firebaseui-idp-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.firebase_buttons{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.firebase_buttons button{
+    margin: 10px;
+    text-align: center;
+    display: none;
+}
+
+#haiLogin{
+    display: none;
+}
+
+
+
+div#view_files .image,div#view_files .video,div#view_files .zip,div#view_files .other{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+div#view_files .image img,div#view_files .video video{
+   width:200px;
+   height:200px;
+   padding:5px;
+   margin:5px;
+}
+
+div#view_files .zip .single,div#view_files .other .single{
+    width:200px;
+    padding:5px;
+    margin:5px;
+}

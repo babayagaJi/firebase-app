@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Firebase</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.css" />
+</head>
+
+<body>
+
+    <div class="firebase_buttons">
+        <button type="button" id="multiLogin" class="btn btn-primary">Show Multi Login</button>
+        <button type="button" id="googleLogin" class="btn btn-primary">Google Login</button>
+        <button type="button" id="facebookLogin" class="btn btn-primary">Facebook Login</button>
+        <button type="button" id="phoneLogin" class="btn btn-primary">Phone Login</button>
+        <button type="button" id="generateToken" class="btn btn-primary">Create Message Token</button>
+        <button type="button" id="getUser" class="btn btn-primary">Get Current User</button>
+        <button type="button" id="userLogout" class="btn btn-primary">Logout</button>
+    </div>
+
+    <div id="firebaseui-auth-container"></div>
+    <div id="recaptcha-container"></div>
+    <div class="spinner-border text-primary" id="loader" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+
+    <div class="view" id="haiLogin">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"
+                    onchange="uploadAnyFiles(this)">
+                <label class="custom-file-label" for="inputGroupFile01">Uploader any files</label>
+            </div>
+        </div>
+    
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Select Storage Type</label>
+            </div>
+            <select class="custom-select" id="selectStorageType" onchange="searchFileType(this)">
+                <option selected value="">Choose...</option>
+                <option value="image">image</option>
+                <option value="video">Video</option>
+                <option value="zip">Zip</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+    
+        <div class="progress">
+            <div id="uploader_progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+    
+        <div id="view_files">
+            <div class="image"></div>
+            <div class="video"> </div>
+            <div class="zip"></div>
+            <div class="other"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+    <!-- Authentication ui -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.0/firebase-ui-auth.js"></script>
+
+
+    <script src="assets/js/firebase.js"></script>
+    <script src="assets/js/google.js"></script>
+    <script src="assets/js/facebook.js"></script>
+    <script src="assets/js/phone.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/messaging.js"></script>
+    <script src="assets/js/emaillogin.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/index.js"></script>
+
+</body>
+
+</html>
